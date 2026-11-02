@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.spec
+*.paf.exe
+pac_installer_log.ini
+.venv/
+venv/

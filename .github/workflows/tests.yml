@@ -1,0 +1,20 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Quellcode auschecken
+        uses: actions/checkout@v4
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Abhängigkeiten installieren
+        run: py -3 -m pip install -r requirements.txt
+      - name: Tests ausführen
+        run: py -3 -m unittest -v tests/test_core.py
